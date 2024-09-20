@@ -1,0 +1,179 @@
+@import '../../../styles/variables';
+
+// Estilos para o cabeçalho
+$header-bg-color-light: #ffffff;
+$header-bg-color-dark: rgba(255, 255, 255, 0.07);
+$header-text-color: $text-color;
+$accent-color: #007bff;
+$header-padding: 15px;
+
+.site-header {
+  background-color: transparent;
+  color: $header-text-color;
+  padding: 0;
+  width: 100%;
+  .container {
+    max-width: 100%;
+    margin: 0;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .site-title {
+    text-align: center;
+    font-family: 'Sans Serif', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    margin: auto;
+    background-color: transparent;
+    color: $header-text-color;
+    flex-grow: 1;
+    &.dark-mode {
+      color: $text-color-dark;
+    }
+  }
+
+  .site-nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        margin-left: 15px;
+
+        a {
+          color: $header-text-color;
+          text-decoration: none;
+          font-size: 16px;
+
+          &:hover {
+            color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+
+  .dark-mode-toggle {
+    position: relative;
+    width: 40px; // Definindo largura e altura para criar um círculo
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%; // Faz o botão ser circular
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: transparent;
+    }
+    &.dark-mode {
+      .icon {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        background-color: transparent;
+        &.light {
+          opacity: 0;
+        }
+        &.dark {
+          opacity: 1;
+        }
+      }
+    }
+    .icon {
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background-color: transparent;
+      &.light {
+        opacity: 1;
+      }
+      &.dark {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+body.dark-mode .site-header {
+  background-color: $header-bg-color-dark;
+  color: $text-color-dark;
+
+  .site-title,
+  .site-nav a {
+    color: $text-color-dark;
+
+    &:hover {
+      color: $accent-color-dark;
+    }
+  }
+
+  .dark-mode-toggle {
+    background-color: $accent-color-dark;
+    color: #fff;
+
+    &:hover {
+      background-color: darken($accent-color-dark, 10%);
+    }
+  }
+}
+
+// Adição de Responsividade
+
+@media only screen and (max-width: 768px) {
+  .site-header {
+    padding: 0;
+
+    .container {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .site-title {
+      font-size: 28px;
+      text-align: center;
+    }
+
+    .site-nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dark-mode-toggle {
+      margin-top: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .site-header {
+    padding: 0;
+
+    .site-title {
+      font-size: 24px;
+    }
+
+    .site-nav ul {
+      gap: 5px;
+    }
+
+    .dark-mode-toggle {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}

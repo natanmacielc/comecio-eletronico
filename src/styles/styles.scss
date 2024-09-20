@@ -1,0 +1,56 @@
+@import './variables';
+
+// Define o layout com Flexbox
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  flex: 1;
+
+  &.dark-mode {
+    background-color: $background-color-dark;
+    color: $text-color-dark;
+  }
+
+  /* Responsividade para ajuste de fonte e espaçamento */
+  @media (max-width: 1024px) {
+    font-size: 1.5rem; /* Ajusta o tamanho da fonte em telas menores */
+    line-height: 1.4;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem; /* Fonte menor para dispositivos móveis */
+    line-height: 1.3;
+  }
+}
+
+.container {
+  background-color: $background-color;
+  box-sizing: border-box;
+  flex-grow: 1; /* O conteúdo principal ocupa o espaço disponível entre o topo e o footer */
+
+  &.dark-mode {
+    background-color: $background-color-dark;
+  }
+}
+
+.mat-mdc-dialog-surface {
+  background-color: $background-color-light;
+  &.dark-mode {
+    background-color: $background-color-dark;
+  }
+}

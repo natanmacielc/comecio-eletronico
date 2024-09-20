@@ -1,0 +1,61 @@
+@import '../../../styles/variables';
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    &.dark-mode {
+        background-color: transparent;
+        color: $text-color-dark;
+    }
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1vw;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    /* Garante que o container seja posicionado relativamente */
+    z-index: 1001;
+    flex-grow: 1;
+    /* Garante que o container ocupe o espaço disponível acima do footer */
+
+    &.dark-mode {
+        background-color: transparent;
+        color: $text-color-dark;
+    }
+
+    p {
+        margin: 0 auto;
+        font-size: 1rem;
+        position: relative;
+        z-index: 1001;
+
+        &.dark-mode {
+            background-color: transparent;
+            color: $text-color-dark;
+        }
+
+        @media only screen and (max-width: 768px) {
+            font-size: 1rem;
+        }
+
+        @media only screen and (max-width: 480px) {
+            font-size: 0.8rem;
+        }
+    }
+}

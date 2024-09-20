@@ -1,0 +1,17 @@
+// Cores para o modo claro
+$background-color-light: #f0f0f0;
+$text-color-light: #333333;
+$header-bg-color-light: #ffffff;
+$accent-color-light: #007bff;
+
+// Cores para o modo escuro
+$background-color-dark: #1c1c1c;
+$text-color-dark: #f0f0f0;
+$header-bg-color-dark: #333333;
+$accent-color-dark: #ff6600;
+
+// Definições padrão
+$background-color: $background-color-light;
+$text-color: $text-color-light;
+$header-bg-color: $header-bg-color-light;
+$accent-color: $accent-color-light;
